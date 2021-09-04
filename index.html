@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title></title>
+	<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.7/vue.js"></script>
 	<script>
 		window.onload = function () {
 			const re = document.body.clientWidth / 75
@@ -12,15 +13,30 @@
 		}
 	</script>
 	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
 		#app {
 			color: blue;
 			width: 10rem;
 			height: 10rem;
+			background: red;
 		}
 	</style>
 </head>
 <body>
-	<div id="app">修改</div>
-	<script src="./index.js"></script>
+	<div id="app">{{ test }}</div>
+	<script>
+		new Vue({
+			el: '#app',
+			data() {
+				return {
+					test: 'hello world'
+				}
+			}
+		})
+	</script>
 </body>
 </html>
